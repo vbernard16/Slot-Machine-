@@ -3,9 +3,9 @@
 
 ### Wire Frame
 
-![Wire Frame landing page]('C:\Users\vaugh\Desktop\sei\project\project-1\images\Wire-Frame-gamePage.png')
+![Wire Frame landing page]('images\Wire-Frame-gamePage.png')
 
-![Wire Frame game page]('C:\Users\vaugh\Desktop\sei\project\project-1\images\Wire-Frame-loadingPage.png')
+![Wire Frame game page]('images\Wire-Frame-loadingPage.png')
 
 ## User Stories
 
@@ -18,7 +18,7 @@ As a user I want to....
         - Have dropdown box for number of columns to play with. Whatever the value of that element is, assign it to an undefined variable called columnNumber: 
         `let columnNumber`
         - Create a function that generates a gameDiv and then loop through the number of columns the user chose to generate the chosen number of gameDivs: <br>
-        `for(i = 0; i < columnNumber; i++) {create gameDiv}`
+        `for(i = 0; i < columnNumber; i++) {create gameDiv}` <br>
          `const gameDiv = document.createElement('div')` <br>
          `gameContainer.append(gameDiv)`
     - Render each gameDiv on page depending on how many columns the user wants to play with
@@ -40,7 +40,7 @@ As a user I want to....
                 Have a constant that equals the number of columns that the user can choose from. Range of columns is from 3 - 10 <br>
                 `const slotResult = [array of symbols]`
                 Create a function to generate a random symbol for the number of columns (if there are 3 columns, then run getRandomSymbol 3x) <br>
-                    `const randomSymbol = Math.floor(Math.random() * randomSymbol.length + 1)`
+                    `const randomSymbol = Math.floor(Math.random() * randomSymbol.length + 1)` <br>
                     `const column1, column2, column3, etc. = []` <br>
                 - Run getRandomSymbol by the number of columns the user chose previously
                 - Create a function (or simply an array with the winning combinations) that checks to see the order of the slotResults. If the slotResult is equal to AT LEAST 3 of any symbol then it is a winning list. The function MUST somehow check through ANY consecutive trio throughout the columns. For example:
