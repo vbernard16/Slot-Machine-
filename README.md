@@ -1,6 +1,15 @@
 
 # SEI PROJECT 1 - My Slot-Machine
 
+### Description
+
+Who needs Vegas when Vegas can come straight to your home? Welcome to "**Mi Slots**", a simple Javascript powered in browser video game that simulates the experience of a high dollar Las Vegas Casino slot reel. Goodbye Luxor! See ya later Caesar's Palace! Sayonara Bellagio! Who needs to see the glits and glamour of the Vegas strip when you can sit in front of your monitor and play **Mi Slots**! Customize your slot reels by choosing from a catelog of sprites with different modifier values. Win non-real virtual money, that's almost as good as the real thing. Come try **Mi Slots** today and see if you've got what it takes to be beat the House.
+
+
+### How to run
+
+**Mi Slots** is accessible through this link (will include link after project completion)
+
 ### Wire Frame
 
 ![Wire Frame landing page]('images\Wire-Frame-gamePage.png')
