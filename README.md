@@ -1,14 +1,13 @@
 
 # SEI PROJECT 1 - My Slot-Machine
 
-## User Stories
-
 ### Wire Frame
 
-![Wire Frame landing page]('/images/Wire-Frame-loadingPage.png)
+![Wire Frame landing page]('/images/Wire-Frame-loadingPage.png')
 
+![Wire Frame game page]('/images/Wire-Frame-gamePage.png')
 
-![Wire Frame game page]('/images/Wire-Frame-gamePage.png)
+## User Stories
 
 ### User story - MVP
 
