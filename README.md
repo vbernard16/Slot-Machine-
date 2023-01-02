@@ -13,7 +13,6 @@ Who needs Vegas when Vegas can come straight to your home? Welcome to "**Mi Slot
 ### Wire Frame
 
 ![Wire Frame landing page]('Wire-Frame-gamePage.png')
-
 ![Wire Frame game page]('Wire-Frame-loadingPage.png')
 
 ## User Stories
