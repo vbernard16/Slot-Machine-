@@ -10,11 +10,11 @@ Goodbye Luxor! See ya later Caesar's Palace! Sayonara Bellagio! Who needs to see
 Come try **My Slots** today and see if you've got what it takes to be beat the House.
 
 
-### How to run
+## How to run
 
 **Mi Slots** is accessible through this link (will include link after project completion)
 
-### Wire Frame
+## Wire Frame
 
 ![Landing Page](Wire-Frame-loadingPage.png)
 
