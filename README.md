@@ -3,7 +3,11 @@
 
 ### Description
 
-Who needs Vegas when Vegas can come straight to your home? Welcome to "**Mi Slots**", a simple Javascript powered, in-browser video game that simulates the experience of high dollar Las Vegas Casino slot reels. Goodbye Luxor! See ya later Caesar's Palace! Sayonara Bellagio! Who needs to see the glits and glamour of the Vegas strip when you can sit in front of your monitor and play **Mi Slots**! Customize your slot reels by choosing from a catelog of sprites with different modifier values. Win non-real virtual money, that's almost as good as the real thing. Come try **Mi Slots** today and see if you've got what it takes to be beat the House.
+Who needs Vegas when Vegas can come straight to your home? Welcome to "**My Slots**", a simple Javascript powered, in-browser video game that simulates the experience of high dollar Las Vegas Casino slot reels. 
+
+Goodbye Luxor! See ya later Caesar's Palace! Sayonara Bellagio! Who needs to see the glits and glamour of the Vegas strip when you can sit in front of your monitor and play **My Slots**! Customize your slot reels by choosing from a catelog of sprites with different modifier values. Win non-real virtual money, that's almost as good as the real thing. 
+
+Come try **My Slots** today and see if you've got what it takes to be beat the House.
 
 
 ### How to run
