@@ -1,5 +1,5 @@
 
-# SEI PROJECT 1 - My Slot-Machine
+# My Slot-Machine
 
 ### Description
 
@@ -62,12 +62,31 @@ As a user I want to....
                     - If 10 columns, a trio is a win, but every 4th, 5th, 6th, etc. pairing is an additional multiplier
 
 4. See the result of the roulette
+    `const reelDiv = document.createElement('div')` <br>
+    `reelDiv.innerHTML = randomSymbol` <br>
+    `reelDiv.append(slotResult)` <br>
+    `gameContainer.append(reelDiv)`
     - Because the user can create multiple columns and there is only one array for the roulette results, each gameDiv will have to be looped through and assigned to their corresponding symbol in the roulette result array. So if the user selected four columns then they also created four gameDivs. And if their turn produced the following roulette result: ['pigeon', 'hummingbird', 'cardinal', 'cardinal'], then a function must be created (with the array as an input) to loop through and display each index to the corresponding gameDiv number.
     
-5. Be notified of a winning/losing round
-6. See my balance increase/decrease depending on round result
-7. Select another round
-8. Option to cash out/end game
+5. Be notified of a winning/losing round and see my balance increase/decrease depending on round result
+    - Function that checks for identical contiguous values
+     `function findContiguousValues(){` <br>
+        `return contiguousNum` <br>
+        `}` <br>
+    `if (reelResult !== contiguousValue){` <br>
+        `roundLoss = true` <br>
+        `userFunds -= playValue` <br>
+    `}` <br>
+    `else{` <br>
+        `roundWin = true` <br>
+        `userFunds += sumOf(contiguousNum)` <br>
+        `}` <br>
+6. Select another round
+7. Option to cash out/end game
+    `If cashOut button clicked === true || userFunds <= 0 {` <br>
+        `gameOver === true` <br>
+        `}`
+    `display.innerHTML = "Game Over. Your funds: ${userFunds}`
 
 ### Ver.2
 
@@ -83,5 +102,5 @@ As a user I want....
 As a user I want....
 
 - To keep track of lifelong winnings
-- Option to post/share score
+
 
