@@ -53,7 +53,7 @@ As a user I want to....
        - **Game mechanic:** <br>
           Create one array and randomly choose from the list and push the item chosen into three empty arrays each representing a column on the slot machine. Every symbol that wasn't chosen will somehow have to be rendered in a specific order in relation to the chosen symbol so that every column will appear to be identical
                 Have a constant that equals the number of columns that the user can choose from. Range of columns is from 3 - 10 <br>
-                `const slotResult = [array of symbols]`
+                `const slotResult = [array of symbols]` <br>
                 Create a function to generate a random symbol for the number of columns (if there are 3 columns, then run getRandomSymbol 3x) <br>
                     `const randomSymbol = Math.floor(Math.random() * randomSymbol.length + 1)` <br>
                     `const column1, column2, column3, etc. = []` <br>
@@ -61,7 +61,7 @@ As a user I want to....
                 - Create a function (or simply an array with the winning combinations) that checks to see the order of the slotResults. If the slotResult is equal to AT LEAST 3 of any symbol then it is a winning list. The function MUST somehow check through ANY consecutive trio throughout the columns. For example:
                     - If 10 columns, a trio is a win, but every 4th, 5th, 6th, etc. pairing is an additional multiplier
 
-4. See the result of the roulette
+4. See the result of the roulette <br>
     `const reelDiv = document.createElement('div')` <br>
     `reelDiv.innerHTML = randomSymbol` <br>
     `reelDiv.append(slotResult)` <br>
@@ -69,9 +69,9 @@ As a user I want to....
     - Because the user can create multiple columns and there is only one array for the roulette results, each gameDiv will have to be looped through and assigned to their corresponding symbol in the roulette result array. So if the user selected four columns then they also created four gameDivs. And if their turn produced the following roulette result: ['pigeon', 'hummingbird', 'cardinal', 'cardinal'], then a function must be created (with the array as an input) to loop through and display each index to the corresponding gameDiv number.
     
 5. Be notified of a winning/losing round and see my balance increase/decrease depending on round result
-    - Function that checks for identical contiguous values
+    - Function that checks for identical contiguous values <br>
      `function findContiguousValues(){` <br>
-        `return contiguousNum` <br>
+            `return contiguousNum` <br>
         `}` <br>
     `if (reelResult !== contiguousValue){` <br>
         `roundLoss = true` <br>
@@ -82,11 +82,12 @@ As a user I want to....
         `userFunds += sumOf(contiguousNum)` <br>
         `}` <br>
 6. Select another round
-7. Option to cash out/end game
+7. Option to cash out/end game <br>
     `If cashOut button clicked === true || userFunds <= 0 {` <br>
         `gameOver === true` <br>
+        `display.innerHTML = "Game Over. Your funds: ${userFunds}` <br>
         `}`
-    `display.innerHTML = "Game Over. Your funds: ${userFunds}`
+    
 
 ### Ver.2
 
