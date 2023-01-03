@@ -1,0 +1,205 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+}
+
+image{
+    width: 100%;
+}
+
+h1{
+    font-size: 5rem;
+}
+
+h2{
+    font-size: 2rem;
+}
+
+ #slot-container{
+    background-color: aqua;
+    border: 4px solid green;
+    overflow: hidden;
+    padding: 2em;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+
+
+
+
+.head-content{
+    padding: 1em;
+}
+
+#hero-title{
+    display: flex;
+    justify-content: center;
+}
+
+#bet-display{
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+#game-container{
+    border: 4px solid blue;
+    padding: 4em;
+}
+
+#bet-div{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 2em;
+}
+
+.button-container{
+    display: flex;
+    margin-top: 2em;
+    padding: 2em;
+    gap: 100px;
+    justify-content: center;
+}
+
+#bet-btn{
+    border: none;
+    border-radius: 10px;
+    font-size: 1.25rem;
+    padding: 0.5em;
+    background-color: rgb(160, 147, 238);
+}
+
+#bet-btn:hover{
+    background-color: rgb(236, 120, 240);
+    animation: shake 0.25s;
+    animation-iteration-count: 2;
+}
+
+#play-btn{
+    border: none;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    padding: 0.5em;
+    background-color: rgb(101, 197, 253);
+}
+
+#play-btn:hover{
+    background-color: aqua;
+    animation: shake 0.25s;
+    animation-iteration-count: 2;
+}
+
+#cash-out-btn{
+    border: none;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    padding: 0.5em;
+    background-color: rgb(184, 243, 95);
+}
+
+#cash-out-btn:hover{
+    background-color: rgb(29, 241, 100);
+    animation: shake 0.25s;
+    animation-iteration-count: 2;
+}
+
+.slide{
+    overflow: hidden;
+    text-align: center;
+    max-width: 200px;
+    margin: 0 auto;
+    width: 200px;
+    background-color: aqua;
+    animation: slidein 1s;
+    animation-timing-function: linear;
+    animation-direction: forwards;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes slidein{
+  to {
+    transform: translateY(-1000px);
+  }
+}
+
+/* // give credit for this code // */
+@keyframes shake {
+    to{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(5deg);
+    }
+    50%{
+        transform: rotate(0deg);
+    }
+    75%{
+        transform: rotate(-5deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+/* 
+.watchme-div{
+    display: block;
+    background-color: aqua;
+    margin: 0 auto;
+    max-width: 200px;
+    max-height: 20vh;
+    border: 2px solid red;
+    overflow: hidden;
+}
+
+.watchme{
+    display: block;
+    text-align: center;
+    max-width: 200px;
+    margin: 0 auto;
+    width: 200px;
+    background-color: aqua;
+    animation: slidein 1s;
+    animation-timing-function: linear;
+    animation-direction: forwards;
+    animation-iteration-count: infinite;
+} */
+
+.reel{
+    /* border: 2px solid blue; */
+    border: 4px solid red;
+    background-color: aqua;
+    margin: 0 auto;
+    text-align: center;
+    overflow: hidden;
+    font-size: 5rem;
+    max-width: 200px;
+    width: 200px;
+    height: 20vh;
+    animation: slidein 1s linear forwards infinite;
+    /* display: none; */
+    
+} 
+
+
+
+.stop-loop{
+    animation-play-state: paused;
+}
+
+.remove-animation{
+    animation: none !important;
+}
+
+.hidden{
+    display: none;
+}
+
+
