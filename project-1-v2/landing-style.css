@@ -1,0 +1,35 @@
+*, *::before, *::after{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+image{
+    width: 100%;
+}
+
+.hero-content{
+    height: 60vh; */
+    background-image: url('images/vegas.jpg');
+ background-position: 0% 42%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* .vegas-background{
+    max-width: 1200px;
+    width: 80%;
+} */
+
+.vegas-background{
+    max-width: 200px;
+}
+
+.cta{
+    display: flex;
+    justify-content: center;
+}
+
+ .img{
+    max-width: 250px;
+} 
+

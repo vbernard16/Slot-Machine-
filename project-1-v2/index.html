@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Andika:wght@700&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,24 +14,32 @@
         <h2 id="bet-display"></h2>
     </div>
     
-    <div id="game-container">
-        <div id="slot-container">
-            <div class="reel r1"></div>
-            <div class="reel r2"></div>
-            <div class="reel r3"></div>
-            <div class="reel r4"></div>
-            <div class="reel r5"></div>
+    <div class="game-container">
+        <div class="slot-container">
+            <div id="scroll-text">
+                <div class="reel r1"></div>
+                <div class="reel r2"></div>
+                <div class="reel r3"></div>
+            </div>
+            
         </div>
         
-        <div id="bet-div">
-            <input id="bet-input" type="text">
-             <input id="bet-btn" type="button" value="Place your bet here">
-        </div>
-    </div>
-    <div class="button-container">
-        <input id="play-btn" type="button" value="Click to play">
-        <input id="cash-out-btn" type="button" value="Cash Out">
-    </div>
+        <section class="controls">
+            <div id="bet-div">
+                <input id="bet-input" type="text">
+                <input id="bet-btn" type="button" value="Place your bet here">
+            </div>
+
+            <div class="button-container">
+                <input id="play-btn" type="button" value="Click to play">
+                <input id="replay-btn" type="button" value="Play">
+                <input id="respin-btn" type="button" value="Re-spin">
+                <input id="cash-out-btn" type="button" value="Cash Out">
+            </div>
+
+        </section>
+        
+    
 
     <script defer src="index.js"></script>
 </body>

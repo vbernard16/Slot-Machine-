@@ -1,14 +1,14 @@
 const reelList = {
-    '10': '🦜',
-    '20': '🦚',
-    '30': '🦩',
-    '40': '🐓',
-    '50': '🐤'
+    '20': '🦜',
+    '50': '🦚',
+    '100': '🦩',
 }
 
 const symbolList = Object.entries(reelList)
-const gameContainer = document.querySelector('#game-container')
-const slotContainer = document.querySelector('#slot-container')
+const gameContainer = document.querySelector('.game-container')
+const slotContainer = document.querySelector('.slot-container')
+const reel = document.querySelectorAll('.reel')
+const scrollText = document.querySelector('#scroll-text')
 const betDisplay = document.querySelector('#bet-display')
 const betBtn = document.querySelector('#bet-btn')
 const betInput = document.querySelector('#bet-input')
@@ -16,36 +16,26 @@ const heroTitle = document.querySelector('#hero-title')
 const betDiv = document.querySelector('#bet-div')
 const playBtn = document.querySelector('#play-btn')
 const cashOutBtn = document.querySelector('#cash-out-btn')
-const reel = document.querySelector('.reel')
-let userFunds = betInput.value
-const reelResult = []
-const slot = []
-let isGameOver = false
-const reelH1 = reel.innerHTML
+const replayBtn = document.querySelector('#replay-btn')
+const respinBtn = document.querySelector('#respin-btn')
+respinBtn.classList.add('hidden')
+replayBtn.classList.add('hidden')
 
+let userFunds
+let reelResult = []
 
-const cashOut = () => {
-    cashOutBtn.addEventListener('click', () => {
-        isGameOver = true
-        console.log(isGameOver)
-    })
-}
 
 // Creating the starting state of the slot machine
 // creating dynamically named variables for each slot
 // and updating their innerHTML to the symbols in the reel list
-for (i = 0; i < symbolList.length; i ++){
-    const reelDiv = document.createElement('div')
-     slot[i+1] = document.querySelector('.r'+[i+1])
-     slot[i+1].innerHTML = `<h1>🦚🐓🦩🦜🐤 🦚🐓🦩🦜🐤</h1>` 
-    reelDiv.appendChild(slot[i+1])
-    slotContainer.append(reelDiv)
+const startState = () => {
+    for (let i = 0; i < symbolList.length; i ++){
+        reel[i].innerHTML =  `<h1>🦚🦩🦜 🦚🦩🦜 🦚🦩🦜 🦚🦩🦜 </h1>`
+        reel[i].classList.add('slide')
+        scrollText.append(reel[i])
+    }
 }
-
-// possible fix: on playgame click, hide slot-container, and then append
-// result list to a new div that is empty
-
-// r1.classList.add('slide')
+startState()
 
 // Randomly choosing symbols from reelList and adding them to the empty Result
 // list array
@@ -55,32 +45,58 @@ const getRandomSymbol = () => {
 }
 
 
-// try using a recursive statement instead of a for loop
 const playGame = () => {
-    
-    for (i = 0; i < symbolList.length; i++){
-        reel.classList.add('remove-animation')
-        slot[i+1].classList.add('remove-animation')
+    for (let i = 0; i < symbolList.length; i++){
         getRandomSymbol()
-        slot[i+1].innerHTML = `<h1>${reelResult[i][1]}</h1>`
-        slotContainer.classList.add('remove-animation')
-    }
-    
-    findContiguousValues(reelResult)
+        reel[i].innerHTML = `<h1>${reelResult[i][1]}</h1>`
+        playBtn.classList.add('hidden')
+        respinBtn.style.display = 'flex'
+        replayBtn.style.display = 'flex'
+        reel[i].classList.remove('slide')
+    } 
+    findContiguousValues(reelResult) 
 }
 
 
- playBtn.addEventListener('click', playGame)
+const respin = () => {
+    startState()
+    getRandomSymbol()
+    reelResult = []
+}
 
 
-const displayBet = () => {
-    betBtn.addEventListener('click', () => {
-        userFunds = parseInt(betInput.value)
-        betDisplay.innerHTML = 'Your bet is: $'+`${userFunds}`
+const cashOut = () => {
+    cashOutBtn.addEventListener('click', () => {
+        if (userFunds === betInput.value){
+            betDisplay.innerHTML = `You need to have funds to cash out. Please play`
+        }
+        else if (userFunds > 0){
+            betDisplay.innerHTML = `Thanks for playing! Your Winnings: ${userFunds}` 
+        }
+        else{
+            betDisplay.innerHTML = `You need to have funds to cash out. Please play`
+        }
     })
 }
 
-displayBet()
+cashOut()
+
+
+playBtn.addEventListener('click', playGame)
+respinBtn.addEventListener('click', respin)
+replayBtn.addEventListener('click', playGame)
+ 
+
+betBtn.addEventListener('click', () => {
+    if (userFunds === ''){
+        betDisplay.innerHTML = 'Please place a bet'
+    }
+    else{
+        userFunds = parseInt(betInput.value)
+        betDisplay.innerHTML = 'Your bet: $'+`${userFunds}`
+    }
+    
+})
 
 
 // Used to add number values in an array
@@ -93,46 +109,22 @@ const addValues = (array) =>{
 
 
 function findContiguousValues(array){
-    for (i = 0; i < array.length; i++){
-        const sumList = []
-        const primaryNum = parseInt(array[i][0])
-        const secondaryNum = parseInt(array[i + 1][0])
-        const tertiaryNum = parseInt(array[i + 2][0])
-        const quartenaryNum = parseInt(array[i + 3][0])
+        let sumList = []
+        const primaryNum = parseInt(array[0][0])
+        const secondaryNum = parseInt(array[1][0])
+        const tertiaryNum = parseInt(array[2][0])
         const firstRoundSum = primaryNum + secondaryNum + tertiaryNum
         const firstRoundProduct = firstRoundSum / tertiaryNum
 
-        if (firstRoundProduct === 3 && tertiaryNum === secondaryNum && secondaryNum === primaryNum) {
-            console.log(`First Round Complete. Three identical contiguous nums: ${primaryNum} and ${secondaryNum} and ${tertiaryNum}`)
+        if (firstRoundProduct === 3) {
             sumList.push(primaryNum, secondaryNum, tertiaryNum)
             let sumValue = addValues(sumList)
-            console.log(`summed value is: ${sumValue}`)
-            userFunds +=sumValue
-            betDisplay.innerHTML = `Your account: ${userFunds}`
-            const secondRoundSum = firstRoundSum + quartenaryNum
-            const secondRoundProduct = secondRoundSum / quartenaryNum
-            if (secondRoundProduct === 4 && quartenaryNum === tertiaryNum){
-                console.log(`Second Round Complete. Four identical contiguous nums: ${primaryNum} and ${secondaryNum} and ${tertiaryNum}`)
-                sumList.push(quartenaryNum)
-                addValues(sumList)
-                const quinaryNum = parseInt(array[i + 4][0])
-                const thirdRoundSum = secondRoundSum + quinaryNum
-                const thirdRoundProduct = thirdRoundSum / quinaryNum
-                console.log(`summed value is: ${sumValue}`)
-                if (thirdRoundProduct === 5 && quinaryNum === quartenaryNum){
-                    console.log(`Goodness gravy. Third Round complete. FIVE identical contiguous nums found!`)
-                    sumList.push(quinaryNum)
-                    addValues(sumList)
-                    console.log(`summed value is: ${sumValue}`)
-                }
-            }  
-        }
+            userFunds+= sumValue
+            betDisplay.innerHTML = `JackPot! ` + '+ $' + `${sumValue} added to your account. Current Funds: ${userFunds}`
+            } 
         else {
-            userFunds -= 10
-            betDisplay.innerHTML = `Your account: ${userFunds}`
-            
-        }
-        
+                userFunds -= 10
+                userFunds <= 0 ? betDisplay.innerHTML = `Bust! You ran out of money! Your Balance: ${userFunds}` : betDisplay.innerHTML = `Round Loss! Funds Remaining: ${userFunds}`
+             }      
     }
-    console.log(`user funds is: ${userFunds}`)
-}
+
