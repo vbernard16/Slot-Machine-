@@ -1,7 +1,7 @@
 const reelList = {
     '20': '🦜',
-    '50': '🦚',
-    '100': '🦩',
+    '100': '🦚',
+    '50': '🦩',
 }
 
 const symbolList = Object.entries(reelList)
@@ -24,6 +24,10 @@ replayBtn.classList.add('hidden')
 let userFunds
 let reelResult = []
 
+let backgroundAudio = new Audio('audio/background-audio.mp3')
+let roundWinAudio = new Audio('audio/round-win-audio.mp3')
+let roundLossAudio = new Audio('audio/round-loss-audio.mp3')
+backgroundAudio.play()
 
 // Creating the starting state of the slot machine
 // creating dynamically named variables for each slot
@@ -46,15 +50,22 @@ const getRandomSymbol = () => {
 
 
 const playGame = () => {
-    for (let i = 0; i < symbolList.length; i++){
-        getRandomSymbol()
-        reel[i].innerHTML = `<h1>${reelResult[i][1]}</h1>`
-        playBtn.classList.add('hidden')
-        respinBtn.style.display = 'flex'
-        replayBtn.style.display = 'flex'
-        reel[i].classList.remove('slide')
-    } 
-    findContiguousValues(reelResult) 
+    if (betInput.value.length === 0){
+        disableBtn(playBtn)
+        betDisplay.innerHTML = `Please place a bet to play.`
+    }
+    else{
+        enableBtn(playBtn)
+        for (let i = 0; i < symbolList.length; i++){
+            getRandomSymbol()
+            reel[i].innerHTML = `<h1>${reelResult[i][1]}</h1>`
+            playBtn.classList.add('hidden')
+            respinBtn.style.display = 'inline'
+            replayBtn.style.display = 'inline'
+            reel[i].classList.remove('slide')
+        } 
+        findContiguousValues(reelResult) 
+    }
 }
 
 
@@ -64,18 +75,19 @@ const respin = () => {
     reelResult = []
 }
 
+const disableBtn = (btn) => {
+    btn.disabled = true
+}
+
+const enableBtn = (btn) => {
+    btn.disabled = false
+}
 
 const cashOut = () => {
     cashOutBtn.addEventListener('click', () => {
-        if (userFunds === betInput.value){
-            betDisplay.innerHTML = `You need to have funds to cash out. Please play`
-        }
-        else if (userFunds > 0){
-            betDisplay.innerHTML = `Thanks for playing! Your Winnings: ${userFunds}` 
-        }
-        else{
-            betDisplay.innerHTML = `You need to have funds to cash out. Please play`
-        }
+        betInput.value.length === 0 ?
+            betDisplay.innerHTML = `You need to have funds to cash out. Please play` :
+                betDisplay.innerHTML = `Thanks for playing! Your Winnings: ${userFunds}` 
     })
 }
 
@@ -88,14 +100,13 @@ replayBtn.addEventListener('click', playGame)
  
 
 betBtn.addEventListener('click', () => {
-    if (userFunds === ''){
+    if (betInput.value.length === 0){
         betDisplay.innerHTML = 'Please place a bet'
     }
     else{
         userFunds = parseInt(betInput.value)
         betDisplay.innerHTML = 'Your bet: $'+`${userFunds}`
     }
-    
 })
 
 

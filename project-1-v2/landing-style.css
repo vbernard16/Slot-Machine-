@@ -3,33 +3,176 @@
     box-sizing: border-box;
 }
 
+body{
+    margin: 0;
+    font-family: 'Andika', sans-serif;
+}
+
 image{
     width: 100%;
 }
 
-.hero-content{
-    height: 60vh; */
-    background-image: url('images/vegas.jpg');
- background-position: 0% 42%;
-    background-repeat: no-repeat;
-    background-size: cover;
+header{
+    background-color: aquamarine;
+    /* padding: 5.5em;
+     background-image: url('images/pexels-ryan-hiebendahl-9576892.jpg');
+     background-size: cover;
+     background-repeat: no-repeat;
+     background-position: 48% ; */
 }
 
-/* .vegas-background{
-    max-width: 1200px;
-    width: 80%;
-} */
+ul{
+   font-family: 'Andika', sans-serif;
+   font-size: 1rem;
+   text-decoration: none;
+   list-style: none;
+   justify-content: flex-end;
+   gap: 50px;
+   padding: 2em;
 
-.vegas-background{
-    max-width: 200px;
+}
+
+.container{
+    margin: 0 auto;
+    width: 80%
+}
+
+.row{
+    display: flex;
+}
+
+
+.hero{
+    font-family: 'Andika', sans-serif;
+    letter-spacing:20px ;
+    font-size: 2rem;
+    text-align: center;
+    padding: 2.5em;
+    /* background-image: url('images/pexels-ryan-hiebendahl-9576892.jpg'); */
+    /* background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0% 50% ;
+    height: 100vh; */
+}
+
+.hero > h3{
+    margin-top: 2.5em;
+    font-size: 1rem;
+    letter-spacing: 2px;
 }
 
 .cta{
-    display: flex;
-    justify-content: center;
+    font-size: 2.0rem;
+    margin: 0 auto;
+    text-align: center;
 }
 
- .img{
-    max-width: 250px;
-} 
+.cta-btn{
+   
+    border: none;
+    border-radius: 10px;
+    font-size: 2rem;
+    padding: 1em;
+    background-color: aquamarine;
+}
 
+.cta-btn:hover{
+    background-color: aqua;
+    animation: shake 0.25s;
+    animation-iteration-count: 2;
+}
+
+.instructions h2{
+    font-size: 2.75em;
+}
+
+.instructions li{
+    padding: 0.75em;
+}
+
+.explanation{
+    font-size: 1.5rem;
+    padding: 2em;
+    margin-bottom: 2em;
+}
+
+.bird-values{
+    text-align: center;
+    font-size:2.75rem;
+    padding: 2.5em;
+}
+
+.content{
+    margin-top: 15em;
+}
+
+
+.explanation-title{
+    font-size: 2.75rem;
+    margin-bottom: 1em;
+   
+}
+
+.game-explanation{
+    display: flex;
+    justify-content: space-between;
+}
+
+.game-explanation h2{
+    font-size: 2.5rem;
+}
+
+.game-explanation p{
+    padding: 2em 0;
+}
+
+.parrot-img{
+    max-width: 200px;
+}
+
+.flamingo-img{
+    max-width: 200px;
+}
+
+.peacock-img{
+    max-width: 200px;
+    height: 42vh;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes shake {
+    to{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(5deg);
+    }
+    50%{
+        transform: rotate(0deg);
+    }
+    75%{
+        transform: rotate(-5deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
