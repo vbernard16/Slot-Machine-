@@ -4,7 +4,7 @@
 
 Who needs Vegas when Vegas can come straight to your home? Who needs nature when nature can come to you? Welcome to "**Birb Slots**", a simple Javascript powered, in-browser video game that simulates the experience of high dollar Las Vegas Casino slot reels AND brings some of the world's coolest feathered friends to your computer.
 
-Goodbye Luxor! See ya later Caesar's Palace! Sayonara Bellagio! Who needs to see the glits and glamour of the Vegas strip when you can sit in front of your monitor and play **Birb Slots**! Feel as if you're in the world's greatest aviary. Win non-real virtual money, that's almost as good as the real thing. 
+Goodbye Luxor! See ya later Caesar's Palace! Sayonara Bellagio! Who needs to see the glits and glamour of the Vegas strip when you can sit in front of your monitor and play **Birb Slots**! Feel as if you're in the world's greatest aviary with the most beautiful winged fauna you've ever seen. Win non-real virtual money, that's almost as good as the real thing. 
 
 Come try **Birb Slots** today and see if you've got what it takes to be beat the House.
 
@@ -27,7 +27,7 @@ Come try **Birb Slots** today and see if you've got what it takes to be beat the
 
 How to run... <br>
 
-- Click on the "Play" button on the landing page. Link will take 
+- Click on the "Play" button on the landing page. Link will take you to the game page.
 - Place a bet and click on the 'place bet' box.
 - Click on the 'Click to play' button to spin the reel and win big!
 
