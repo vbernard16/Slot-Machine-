@@ -1,23 +1,24 @@
 const reelList = {
     '20': '🦜',
-    '100': '🦚',
     '50': '🦩',
+    '100': '🦚',
 }
 
 const symbolList = Object.entries(reelList)
 const gameContainer = document.querySelector('.game-container')
 const slotContainer = document.querySelector('.slot-container')
-const reel = document.querySelectorAll('.reel')
+const reels = document.querySelectorAll('.reel')
 const scrollText = document.querySelector('#scroll-text')
+const betDiv = document.querySelector('#bet-div')
 const betDisplay = document.querySelector('#bet-display')
 const betBtn = document.querySelector('#bet-btn')
 const betInput = document.querySelector('#bet-input')
-const heroTitle = document.querySelector('#hero-title')
-const betDiv = document.querySelector('#bet-div')
 const playBtn = document.querySelector('#play-btn')
 const cashOutBtn = document.querySelector('#cash-out-btn')
 const replayBtn = document.querySelector('#replay-btn')
 const respinBtn = document.querySelector('#respin-btn')
+const heroTitle = document.querySelector('#hero-title')
+
 respinBtn.classList.add('hidden')
 replayBtn.classList.add('hidden')
 
@@ -27,16 +28,16 @@ let reelResult = []
 let backgroundAudio = new Audio('audio/background-audio.mp3')
 let roundWinAudio = new Audio('audio/round-win-audio.mp3')
 let roundLossAudio = new Audio('audio/round-loss-audio.mp3')
-backgroundAudio.play()
+
 
 // Creating the starting state of the slot machine
 // creating dynamically named variables for each slot
 // and updating their innerHTML to the symbols in the reel list
 const startState = () => {
     for (let i = 0; i < symbolList.length; i ++){
-        reel[i].innerHTML =  `<h1>🦚🦩🦜 🦚🦩🦜 🦚🦩🦜 🦚🦩🦜 </h1>`
-        reel[i].classList.add('slide')
-        scrollText.append(reel[i])
+        reels[i].innerHTML =  `<h1>🦚🦩🦜 🦚🦩🦜 🦚🦩🦜 🦚🦩🦜 </h1>`
+        reels[i].classList.add('slide')
+        scrollText.append(reels[i])
     }
 }
 startState()
@@ -51,18 +52,16 @@ const getRandomSymbol = () => {
 
 const playGame = () => {
     if (betInput.value.length === 0){
-        disableBtn(playBtn)
         betDisplay.innerHTML = `Please place a bet to play.`
     }
     else{
-        enableBtn(playBtn)
         for (let i = 0; i < symbolList.length; i++){
             getRandomSymbol()
-            reel[i].innerHTML = `<h1>${reelResult[i][1]}</h1>`
+            reels[i].innerHTML = `<h1>${reelResult[i][1]}</h1>`
             playBtn.classList.add('hidden')
             respinBtn.style.display = 'inline'
             replayBtn.style.display = 'inline'
-            reel[i].classList.remove('slide')
+            reels[i].classList.remove('slide')
         } 
         findContiguousValues(reelResult) 
     }
@@ -73,14 +72,6 @@ const respin = () => {
     startState()
     getRandomSymbol()
     reelResult = []
-}
-
-const disableBtn = (btn) => {
-    btn.disabled = true
-}
-
-const enableBtn = (btn) => {
-    btn.disabled = false
 }
 
 const cashOut = () => {
@@ -102,6 +93,9 @@ replayBtn.addEventListener('click', playGame)
 betBtn.addEventListener('click', () => {
     if (betInput.value.length === 0){
         betDisplay.innerHTML = 'Please place a bet'
+    }
+    else if (betInput.value > 100){
+        betDisplay.innerHTML = 'Max bet is $100. Please input appropriate bet'
     }
     else{
         userFunds = parseInt(betInput.value)
