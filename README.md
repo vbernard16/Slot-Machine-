@@ -23,7 +23,7 @@ Come try **Birb Slots** today and see if you've got what it takes to be beat the
 
 ## How to run
 
-**Birb Slots** is accessible through this link (will include link after project completion) <br>
+**Birb Slots** is accessible through this link https://vbernard16.github.io/Slot-Machine-/ <br>
 
 How to run... <br>
 
