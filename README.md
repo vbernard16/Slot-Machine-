@@ -39,6 +39,7 @@ How to run... <br>
 As a user I want....
 
 - To keep track of rounds/slot pulls
+- Add audio to game
 
 
 ### Ver.3

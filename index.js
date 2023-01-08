@@ -25,10 +25,6 @@ replayBtn.classList.add('hidden')
 let userFunds
 let reelResult = []
 
-let backgroundAudio = new Audio('audio/background-audio.mp3')
-let roundWinAudio = new Audio('audio/round-win-audio.mp3')
-let roundLossAudio = new Audio('audio/round-loss-audio.mp3')
-
 
 // Creating the starting state of the slot machine
 // creating dynamically named variables for each slot
