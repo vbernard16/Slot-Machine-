@@ -78,7 +78,7 @@ const cashOut = () => {
     cashOutBtn.addEventListener('click', () => {
         betInput.value.length === 0 ?
             betDisplay.innerHTML = `You need to have funds to cash out. Please play` :
-                betDisplay.innerHTML = `Thanks for playing! Your Winnings: ${userFunds}` 
+                betDisplay.innerHTML = `Thanks for playing! Your Winnings: $`+`${userFunds}` 
     })
 }
 
@@ -125,11 +125,11 @@ function findContiguousValues(array){
             sumList.push(primaryNum, secondaryNum, tertiaryNum)
             let sumValue = addValues(sumList)
             userFunds+= sumValue
-            betDisplay.innerHTML = `JackPot! ` + '+ $' + `${sumValue} added to your account. Current Funds: ${userFunds}`
+            betDisplay.innerHTML = `JackPot! ` + '+ $' + `${sumValue} added to your account.`+'Current Funds: $'+`${userFunds}`
             } 
         else {
                 userFunds -= 10
-                userFunds <= 0 ? betDisplay.innerHTML = `Bust! You ran out of money! Your Balance: ${userFunds}` : betDisplay.innerHTML = `Round Loss! Funds Remaining: ${userFunds}`
+                userFunds <= 0 ? betDisplay.innerHTML = 'Bust! You ran out of money! Your Balance: $'+`${userFunds}` : betDisplay.innerHTML = 'Round Loss! Funds Remaining: $'+`${userFunds}`
              }      
     }
 

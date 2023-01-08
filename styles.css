@@ -6,9 +6,10 @@ body{
     margin: 0;
     font-family: 'Ubuntu', sans-serif;
     background-color: cadetblue;
-    background-image: url('images/betting-img.jpg');
+    background-image: url('images/flying-birds-2.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    background-position-y: 20%;
 }
 
 image{
@@ -24,11 +25,13 @@ h2{
 }
 
  .slot-container{
+    margin: 0 auto;
+    width: 80%;
     max-width: 1200px;
     overflow: hidden;
     padding: 2em;
     align-items: center;
-    height: 30vh;
+    height: 25vh;
 }
 
 .head-content{
@@ -39,8 +42,9 @@ h2{
 }
 
 #hero-title{
-    font-size: 4rem;
-    font-family: 'Ubuntu', sans-serif;
+    font-size: 6rem;
+    color: #fff;
+    font-family: 'Koulen', cursive;
     display: flex;
     justify-content: center;
 }
@@ -51,20 +55,17 @@ h2{
     margin-top: 2em;
 }
 
-.game-container{
-    margin: 0 auto;
-    width: 80%;
-    padding: 4em;
-}
-
 
 .controls{
     margin-top: 4em;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 50px;
 }
 
 #bet-div{
+    display: flex;
+    justify-content: space-between;
     align-self: center;
   
 }
@@ -79,6 +80,7 @@ h2{
 }
 
 .button-container{
+    padding: 20px;
     align-self: center;
     margin-bottom: 0.5em;
 }
@@ -90,7 +92,6 @@ h2{
     border-radius: 10px;
     margin-left: 20px;
     font-size: 1.20rem;
-    padding: 0.5em;
     background-color: rgb(160, 147, 238);
 }
 
@@ -135,7 +136,7 @@ h2{
     font-family: 'Andika', sans-serif;
     border: none;
     border-radius: 10px;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     padding: 0.5em;
     background-color: rgb(101, 197, 253);
 }
@@ -150,7 +151,7 @@ h2{
     font-family: 'Andika', sans-serif;
     border: none;
     border-radius: 10px;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     padding: 0.5em;
     background-color: rgb(245, 190, 11);
 }
@@ -162,8 +163,7 @@ h2{
 }
 
 .slide{
-    background-color: aqua;
-    animation: slidein 1.25s;
+    animation: slidein 1.5s;
     animation-timing-function: linear;
     animation-direction: forwards;
     animation-iteration-count: infinite;
@@ -191,7 +191,6 @@ h2{
   }
 }
 
-/* // give credit for this code // */
 @keyframes shake {
     to{
         transform: rotate(0deg);
@@ -211,7 +210,7 @@ h2{
 }
 
 .reel{
-    background-color :gray;
+    background-color :rgb(151, 200, 240);
     margin: 0 auto;
     text-align: center;
     overflow: hidden;
@@ -230,11 +229,8 @@ h2{
     display: none;
 }
 
-.show{
-    display: flex;
-}
 
-@media screen (max-width: 1320px) {
+@media (max-width: 600px) {
     .button-container{
         display: block
     }
