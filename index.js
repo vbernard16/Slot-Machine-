@@ -5,10 +5,12 @@ const reelList = {
 }
 
 const symbolList = Object.entries(reelList)
+// remove unused `gameContainer` and `slotContainer`
 const gameContainer = document.querySelector('.game-container')
 const slotContainer = document.querySelector('.slot-container')
 const reels = document.querySelectorAll('.reel')
 const scrollText = document.querySelector('#scroll-text')
+// remove unused `betDiv`
 const betDiv = document.querySelector('#bet-div')
 const betDisplay = document.querySelector('#bet-display')
 const betBtn = document.querySelector('#bet-btn')
@@ -17,6 +19,7 @@ const playBtn = document.querySelector('#play-btn')
 const cashOutBtn = document.querySelector('#cash-out-btn')
 const replayBtn = document.querySelector('#replay-btn')
 const respinBtn = document.querySelector('#respin-btn')
+// remove unused `heroTitle`
 const heroTitle = document.querySelector('#hero-title')
 
 respinBtn.classList.add('hidden')
@@ -114,6 +117,7 @@ function findContiguousValues(array){
         const primaryNum = parseInt(array[0][0])
         const secondaryNum = parseInt(array[1][0])
         const tertiaryNum = parseInt(array[2][0])
+        // wonderful naming of this var
         const firstRoundSum = primaryNum + secondaryNum + tertiaryNum
         const firstRoundProduct = firstRoundSum / tertiaryNum
 
@@ -128,4 +132,3 @@ function findContiguousValues(array){
                 userFunds <= 0 ? betDisplay.innerHTML = 'Bust! You ran out of money! Your Balance: $'+`${userFunds}` : betDisplay.innerHTML = 'Round Loss! Funds Remaining: $'+`${userFunds}`
              }      
     }
-
